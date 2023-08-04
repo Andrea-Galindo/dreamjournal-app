@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import Header from "../components/Header";
 
 const Signup = () => {
   // save name to store it in "users" collection. Feature currently not working
@@ -29,7 +30,6 @@ const Signup = () => {
       await createUser(email, password).then((credentials) => {
         setCurrentUserId(credentials.user.uid);
         console.log(currentUserId);
-        navigate("/home");
       });
       await addDoc(collection(db, "users"), {
         uid: currentUserId,
@@ -37,12 +37,12 @@ const Signup = () => {
         email: email,
       });
       localStorage.setItem("user", name);
-
+      navigate("/home");
       // console.log(email, password);
     } catch (e) {
       setError(e.message);
       if (e.message === "Firebase: Error (auth/invalid-email).") {
-        setError("invalid email");
+        setError("Invalid email");
       } else {
       }
       console.log(e.message);
@@ -51,44 +51,56 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="welcome-page">
+      <div>
+        <Header />
+      </div>
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "50vh" }}
       >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
+        <div className="w-100" style={{ maxWidth: "390px" }}>
           <Card>
             <Card.Body>
+              <h2
+                className="text-center mb-4"
+                style={{
+                  fontFamily: "degular-text, sans-serif",
+                  fontWeight: "500px",
+                }}
+              >
+                Sign up
+              </h2>
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="name">
-                  <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="name"
+                    placeholder="Name"
                     required
                     onChange={(e) => setName(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group id="email">
-                  <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
+                    placeholder="Email"
                     required
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group id="password">
-                  <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
+                    placeholder="Password"
                     required
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Form.Group>
                 <Form.Group id="passwordConfirm">
-                  <Form.Label>Confirm Password</Form.Label>
                   <Form.Control
                     type="password"
+                    placeholder="Confirm Password"
                     required
                     onChange={(e) => setPasswordConfirm(e.target.value)}
                   />
@@ -99,7 +111,10 @@ const Signup = () => {
               </Form>
             </Card.Body>
           </Card>
-          <div className="w-100 text-center mt-2">
+          <div
+            className="w-100 text-center mt-2"
+            style={{ fontFamily: "degular-text, sans-serif" }}
+          >
             Already have an account? <Link to="/">Log In</Link>
           </div>
         </div>
