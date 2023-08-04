@@ -23,11 +23,11 @@ const Login = () => {
     } catch (e) {
       setError(e.message);
       if (e.message === "Firebase: Error (auth/user-not-found).") {
-        setError("user not found");
+        setError("User not found");
       } else if (e.message === "Firebase: Error (auth/wrong-password).") {
-        setError("invalid password");
+        setError("Invalid password");
       } else if (e.message === "Firebase: Error (auth/invalid-email).") {
-        setError("invalid email");
+        setError("Invalid email");
       } else {
         setError(e.message);
       }
@@ -45,7 +45,10 @@ const Login = () => {
             <Card.Body>
               <h2
                 className="text-center mb-4"
-                style={{ fontFamily: "degular-text", fontWeight: "bold" }}
+                style={{
+                  fontFamily: "degular-text, sans-serif",
+                  fontWeight: "500px",
+                }}
               >
                 Sign in
               </h2>
@@ -55,7 +58,7 @@ const Login = () => {
                   {/* <Form.Label>Email</Form.Label> */}
                   <Form.Control
                     type="email"
-                    placeholder="name@example.com"
+                    placeholder="Enter email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </Form.Group>
@@ -78,7 +81,7 @@ const Login = () => {
           </Card>
           <div
             className="w-100 text-center mt-2"
-            style={{ fontFamily: "degular-text" }}
+            style={{ fontFamily: "degular-text, sans-serif" }}
           >
             Need an account? <Link to="/signup">Sign Up</Link>
           </div>
