@@ -29,7 +29,7 @@ const Signup = () => {
       setLoading(true);
       await createUser(email, password).then((credentials) => {
         setCurrentUserId(credentials.user.uid);
-        console.log(currentUserId);
+        console.log("this is working" + currentUserId);
       });
       await addDoc(collection(db, "users"), {
         uid: currentUserId,
