@@ -19,7 +19,7 @@ const DreamForm = () => {
   // Add document dream to dreams collection in firebase
   const createDream = async (e) => {
     e.preventDefault(e);
-    await addDoc(collection(db, "users"), {
+    await addDoc(collection(db, "dreams"), {
       uid: user.uid,
       date: date,
       title: title,
@@ -33,7 +33,7 @@ const DreamForm = () => {
     setDescription("");
     setPeopleAndPlaces("");
     setFeelings("");
-    navigate("/home");
+    navigate("/dashboard");
   };
 
   return (
