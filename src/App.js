@@ -4,8 +4,8 @@ import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Home from "./pages/Home";
 import NewDream from "./pages/NewDream";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
           <Route path="/" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route
-            path="/home"
+            path="/dashboard"
             element={
               <ProtectedRoute>
-                <Home />
+                <Dashboard />
               </ProtectedRoute>
             }
           ></Route>

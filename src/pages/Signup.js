@@ -37,7 +37,7 @@ const Signup = () => {
         email: email,
       });
       localStorage.setItem("user", name);
-      navigate("/home");
+      navigate("/dashboard");
       // console.log(email, password);
     } catch (e) {
       setError(e.message);
