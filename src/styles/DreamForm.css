@@ -1,0 +1,13 @@
+.submit-dream-btn {
+  color: rgb(250, 249, 246);
+  background-color: #da8e6b !important;
+  border: #da8e6b !important;
+  border-radius: 0.375rem;
+  padding: 6px 12px !important;
+  width: 5rem !important;
+}
+
+.submit-dream-btn:hover {
+  background-color: #d8865f !important;
+  border: #d8865f !important;
+}
