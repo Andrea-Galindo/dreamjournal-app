@@ -40,7 +40,7 @@ function EditDream({
 
   const handleOnDelete = (id) => {
     onDelete(id);
-    navigate("/dreams");
+    navigate("/dashboard");
   };
 
   return (
