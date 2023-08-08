@@ -48,6 +48,7 @@ const Login = () => {
                 style={{
                   fontFamily: "degular-text, sans-serif",
                   fontWeight: "500px",
+                  // fontSize: "1.5rem",
                 }}
               >
                 Sign in
@@ -55,7 +56,6 @@ const Login = () => {
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="email">
-                  {/* <Form.Label>Email</Form.Label> */}
                   <Form.Control
                     type="email"
                     placeholder="Enter email"
@@ -63,7 +63,6 @@ const Login = () => {
                   />
                 </Form.Group>
                 <Form.Group id="password">
-                  {/* <Form.Label>Password</Form.Label> */}
                   <Form.Control
                     type="password"
                     placeholder="password"
@@ -75,7 +74,15 @@ const Login = () => {
                 </Button>
               </Form>
               <div className="w-100 text-center mt-3">
-                <Link to="/forgot-password">Forgot Password?</Link>
+                <Link
+                  style={{
+                    fontFamily: "degular-text, sans-serif",
+                    color: "black",
+                  }}
+                  to="/forgot-password"
+                >
+                  Forgot Password?
+                </Link>
               </div>
             </Card.Body>
           </Card>
@@ -83,7 +90,10 @@ const Login = () => {
             className="w-100 text-center mt-2"
             style={{ fontFamily: "degular-text, sans-serif" }}
           >
-            Need an account? <Link to="/signup">Sign Up</Link>
+            Need an account?{" "}
+            <Link style={{ color: "black" }} to="/signup">
+              Sign Up
+            </Link>
           </div>
         </div>
       </Container>
