@@ -143,13 +143,14 @@ const Dashboard = () => {
       {/* <div className="m-5 text-center no-records">
         You have not yet created dream records
       </div> */}
-
-      <LinkContainer
-        style={{ fontSize: "3rem", color: "rgb(129, 94, 234" }}
-        to="/newdream"
-      >
-        <PiPlusCircleThin />
-      </LinkContainer>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <LinkContainer
+          style={{ fontSize: "3rem", color: "rgb(129, 94, 234" }}
+          to="/newdream"
+        >
+          <PiPlusCircleThin />
+        </LinkContainer>
+      </div>
     </div>
   );
 };
