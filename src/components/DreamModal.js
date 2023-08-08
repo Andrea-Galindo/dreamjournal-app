@@ -3,6 +3,9 @@ import { Modal, Card, Form, Container } from "react-bootstrap";
 import { db } from "../firebase";
 import { updateDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
+
+import "../styles/DreamModal.css";
 
 function DreamModal({
   id,
@@ -46,10 +49,14 @@ function DreamModal({
 
   return (
     <>
-      <button className="modal-open" onClick={handleShow}></button>
+      <button className="modal-open" onClick={handleShow}>
+        <IoIosArrowDown />
+      </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
+          <Modal.Title style={{ fontFamily: "degular-text, sans-serif" }}>
+            {title}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container className="d-flex align-items-center justify-content-center mt-3">
