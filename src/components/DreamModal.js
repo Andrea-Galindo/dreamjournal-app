@@ -131,6 +131,7 @@ function DreamModal({
         </Modal.Body>
         <Modal.Footer>
           <button
+            style={{ fontFamily: "degular-text, sans-serif" }}
             form="edit-dream"
             variant="primary"
             className="dream-modal-btn"
@@ -139,6 +140,7 @@ function DreamModal({
             save
           </button>
           <button
+            style={{ fontFamily: "degular-text, sans-serif" }}
             className="dream-modal-btn"
             onClick={() => handleOnDelete(id)}
             form="edit-dream"

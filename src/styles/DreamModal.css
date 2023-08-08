@@ -24,3 +24,8 @@
   background-color: white;
   border: white;
 }
+
+.modal {
+  --bs-modal-header-border-color: rgba(247, 236, 221, 0.85) !important;
+  --bs-modal-footer-border-color: rgba(247, 236, 221, 0.85) !important;
+}
