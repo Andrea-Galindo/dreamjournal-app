@@ -23,7 +23,11 @@ const AppNavBar = () => {
   };
 
   return (
-    <Navbar expand="lg" className="position-relative py-4">
+    <Navbar
+      expand="lg"
+      className="position-relative"
+      style={{ paddingTop: "2rem" }}
+    >
       <LinkContainer
         style={{ fontFamily: "synthemesc, sans-serif", fontSize: "25px" }}
         to="/dashboard"
