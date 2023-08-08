@@ -1,0 +1,26 @@
+.modal-content {
+  background-color: rgba(247, 236, 221, 0.85) !important;
+}
+
+.dream-modal-btn {
+  color: rgb(250, 249, 246);
+  background-color: #da8e6b !important;
+  border: #da8e6b !important;
+  border-radius: 0.375rem;
+  padding: 6px 12px !important;
+  width: 5rem !important;
+}
+
+.dream-modal-btn:hover {
+  background-color: #d8865f !important;
+  border: #d8865f !important;
+}
+
+.modal-footer {
+  justify-content: center !important;
+}
+
+.modal-open {
+  background-color: white;
+  border: white;
+}
