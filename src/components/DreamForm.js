@@ -5,6 +5,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
+import "../styles/DreamForm.css";
+
 const DreamForm = () => {
   const navigate = useNavigate();
 
@@ -37,7 +39,10 @@ const DreamForm = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center mt-3">
+    <Container
+      className="d-flex justify-content-center mt-3"
+      style={{ textAlign: "left" }}
+    >
       <div className="w-100" style={{ maxWidth: "600px" }}>
         <Card>
           <Card.Body>
@@ -82,7 +87,7 @@ const DreamForm = () => {
                   onChange={(e) => setFeelings(e.target.value)}
                 />
               </Form.Group>
-              <div className="dream-form-btn">
+              <div className="dream-form-btn" style={{ display: "flex" }}>
                 <button
                   className="submit-dream-btn w-30 mx-auto mt-2 mr-2"
                   type="submit"
