@@ -55,10 +55,7 @@ const Signup = () => {
       <div>
         <Header />
       </div>
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "50vh" }}
-      >
+      <Container className="d-flex align-items-center justify-content-center">
         <div className="w-100" style={{ maxWidth: "390px" }}>
           <Card>
             <Card.Body>
@@ -115,7 +112,10 @@ const Signup = () => {
             className="w-100 text-center mt-2"
             style={{ fontFamily: "degular-text, sans-serif" }}
           >
-            Already have an account? <Link to="/">Log In</Link>
+            Already have an account?{" "}
+            <Link to="/" style={{ color: "black" }}>
+              Log In
+            </Link>
           </div>
         </div>
       </Container>
